@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping({"/api"})
 public class WineController {
 
-    @RequestMapping("/keys")
+    @RequestMapping("/keywords")
     public int create(@RequestBody Wine wine){
         return wine.getCountry();
-        //return null;
     }
-
 }
