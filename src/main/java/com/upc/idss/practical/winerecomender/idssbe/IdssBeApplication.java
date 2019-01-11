@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class IdssBeApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(IdssBeApplication.class, args);
 	}
 }
