@@ -16,6 +16,9 @@ import org.json.simple.JSONObject;
 @RequestMapping({"/api"})
 public class WineController {
 
+    private final String python_exe = "c:\\Users\\puma\\Appdata\\Local\\Programs\\Python\\Python37-32\\python.exe";
+    private final String ranking_python_file = "c:C:\\Users\\Puma\\PycharmProjects\\IDSS-py\\source\\ranking.py";
+
     @RequestMapping("/keywords")
     public JSONObject create(@RequestBody Wine wine){
         JSONObject obj = new JSONObject();
@@ -25,7 +28,7 @@ public class WineController {
 //        System.out.print(arguments);
         String result = "";
         ProcessBuilder builder = new ProcessBuilder(
-                "cmd.exe", "/c", "C:\\Users\\filip\\AppData\\Local\\Programs\\Python\\Python36\\python3.exe C:\\Users\\filip\\Desktop\\UPC\\IDSS\\Project\\IDSS-py\\source\\ranking.py " + arguments);
+                "cmd.exe", "/c", python_exe + ranking_python_file + arguments);
         builder.redirectErrorStream(true);
         Process p = null;
         try {
@@ -53,4 +56,5 @@ public class WineController {
 
         return obj;
     }
+
 }
